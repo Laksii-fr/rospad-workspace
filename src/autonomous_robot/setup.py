@@ -11,5 +11,5 @@ setup(
     'console_scripts': [
         'navigation_node = autonomous_robot.my_node:main',
     ],
-},
+    },
 )
