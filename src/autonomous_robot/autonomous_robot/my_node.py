@@ -2,14 +2,26 @@ import rclpy
 from rclpy.node import Node
 
 
-class MyNode(Node):
+class NavigationNode(Node):
+
     def __init__(self):
-        super().__init__('my_node')
-        self.get_logger().info('Node started!')
+        super().__init__('navigation_node')
+
+        self.get_logger().info(
+            'Autonomous Robotics Navigation started!'
+        )
 
 
 def main(args=None):
     rclpy.init(args=args)
-    node = MyNode()
+
+    node = NavigationNode()
+
     rclpy.spin(node)
+
+    node.destroy_node()
     rclpy.shutdown()
+
+
+if __name__ == '__main__':
+    main()
